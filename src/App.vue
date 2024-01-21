@@ -4,9 +4,11 @@
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
       <nav>
-        <router-link to="/">Home</router-link>
+        <!-- <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
         <router-link to="/form">form</router-link>
+        <router-link to="/formValidate">formValidate</router-link> -->
+        <router-link v-for="item in routes" :key="item.name" :to="item.path">{{ item.name }}</router-link>
       </nav>
     </header>
 
@@ -14,6 +16,17 @@
   </div>
 </template>
 
+<script>
+import { routes } from '@/router/index.js';
+
+export default {
+  data() {
+    return {
+      routes,
+    };
+  },
+};
+</script>
 <style scoped>
 header {
   display: flex;

@@ -5,7 +5,7 @@ import demoRouters from './modules/demo';
 
 Vue.use(VueRouter);
 
-const routes = [...demoRouters];
+export const routes = [...demoRouters];
 
 const router = new VueRouter({
   mode: 'history',
